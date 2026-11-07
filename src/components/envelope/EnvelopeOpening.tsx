@@ -109,7 +109,7 @@ export const EnvelopeOpening: React.FC<EnvelopeOpeningProps> = ({ isOpen, onOpen
           >
             <p className="text-[11px] sm:text-xs uppercase tracking-[0.28em] text-[#D4B475] font-sans mb-1.5">
               {weddingData.couple.groom.district}, {weddingData.couple.groom.state} ×{' '}
-              {weddingData.couple.bride.state}
+              {weddingData.couple.bride.district}, {weddingData.couple.bride.state}
             </p>
             <h1 className="text-2xl sm:text-3xl md:text-4xl font-serif font-normal text-[#F8F2E8] tracking-wide">
               {weddingData.envelope.invitationText}

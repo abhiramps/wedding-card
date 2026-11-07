@@ -46,7 +46,7 @@ export const FooterSection: React.FC<FooterSectionProps> = ({ onReplayEnvelope }
         </p>
         <p className="text-[11px] font-sans uppercase tracking-[0.2em] text-[#713D43] mt-1">
           {weddingData.couple.groom.district}, {weddingData.couple.groom.state} •{' '}
-          {weddingData.couple.bride.state}
+          {weddingData.couple.bride.district}, {weddingData.couple.bride.state}
         </p>
 
         {/* Bilingual Auspicious Invitation Line */}
