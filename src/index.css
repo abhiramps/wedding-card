@@ -1,0 +1,129 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+  --font-display: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Lato', system-ui, -apple-system, sans-serif;
+  --font-script: 'Alex Brush', cursive;
+
+  --color-ivory: #F8F2E8;
+  --color-ivory-card: #FBF8F2;
+  --color-ivory-deep: #EFE6D5;
+  --color-forest: #29452F;
+  --color-forest-dark: #1D3322;
+  --color-gold: #B38A45;
+  --color-gold-light: #D4B475;
+  --color-gold-dark: #8C682D;
+  --color-maroon: #713D43;
+  --color-charcoal: #30251E;
+  --color-muted: #5C4D42;
+}
+
+@layer utilities {
+  .font-serif {
+    font-family: var(--font-serif);
+  }
+  .font-display {
+    font-family: var(--font-display);
+  }
+  .font-sans {
+    font-family: var(--font-sans);
+  }
+  .font-script {
+    font-family: var(--font-script);
+  }
+
+  /* Subtle warm handcrafted paper texture */
+  .paper-texture {
+    background-color: #F8F2E8;
+    background-image:
+      radial-gradient(rgba(179, 138, 69, 0.07) 1px, transparent 0),
+      radial-gradient(rgba(48, 37, 30, 0.03) 1px, transparent 0);
+    background-size: 28px 28px;
+    background-position: 0 0, 14px 14px;
+  }
+
+  /* Damask brocade pattern for the invitation envelope */
+  .damask-pattern {
+    background-color: #EFE4D2;
+    background-image:
+      radial-gradient(circle at 50% 50%, rgba(179, 138, 69, 0.14) 0%, transparent 60%),
+      repeating-linear-gradient(45deg, rgba(179, 138, 69, 0.06) 0px, rgba(179, 138, 69, 0.06) 1px, transparent 1px, transparent 10px),
+      repeating-linear-gradient(-45deg, rgba(179, 138, 69, 0.06) 0px, rgba(179, 138, 69, 0.06) 1px, transparent 1px, transparent 10px);
+  }
+
+  .gold-foil-text {
+    background: linear-gradient(135deg, #CFA861 0%, #B38A45 50%, #8A662B 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .perspective-1200 {
+    perspective: 1200px;
+  }
+
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+}
+
+/* Subtle candle/lamp flame animation */
+@keyframes flameGlow {
+  0%, 100% {
+    transform: scale(1) rotate(-1deg);
+    opacity: 0.92;
+    filter: drop-shadow(0 0 8px rgba(242, 185, 73, 0.8));
+  }
+  50% {
+    transform: scale(1.1) rotate(1deg);
+    opacity: 1;
+    filter: drop-shadow(0 0 14px rgba(255, 165, 30, 0.95));
+  }
+}
+
+.animate-flame {
+  animation: flameGlow 2.4s ease-in-out infinite;
+  transform-origin: bottom center;
+}
+
+@keyframes gentleSway {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-5px) rotate(1.2deg);
+  }
+}
+
+.animate-sway {
+  animation: gentleSway 5s ease-in-out infinite;
+}
+
+/* Reduced motion accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Custom scrollbar matching warm ivory & antique gold */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #F8F2E8;
+}
+::-webkit-scrollbar-thumb {
+  background: #C9A96E;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #B38A45;
+}
