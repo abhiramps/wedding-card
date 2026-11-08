@@ -57,7 +57,7 @@ export const weddingData: WeddingConfig = {
         id: 'milestone-1',
         yearOrDate: 'First Chapter',
         title: 'When Paths Crossed',
-        location: 'Across the Palakkad Gap',
+        location: 'Across the Banglore',
         description:
           'What began as a warm introduction quickly blossomed into effortless conversations, discovering how beautifully our worlds complemented one another.',
       },
@@ -253,8 +253,8 @@ export const weddingData: WeddingConfig = {
     heading: 'With Love and Blessings',
     message: '',
     bilingualBlessing: {
-      malayalam: 'സ്നേഹപൂർവ്വം ക്ഷണിക്കുന്നു',
-      tamil: 'அன்புடன் அழைக்கிறோம்',
+      malayalam: 'നിങ്ങളുടെ സ്നേഹത്തിനും അനുഗ്രഹങ്ങൾക്കും നന്ദി',
+      tamil: 'உங்கள் ஆசீர்வாதங்களுக்கும் அன்புக்கும் மிக்க நன்றி',
     },
   },
 
