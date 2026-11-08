@@ -36,9 +36,11 @@ export const FooterSection: React.FC<FooterSectionProps> = ({ onReplayEnvelope }
           <GoldDivider className="w-36 h-4" />
         </div>
 
-        <p className="font-sans text-xs sm:text-sm text-[#5C4D42] max-w-md mx-auto leading-relaxed">
-          {weddingData.footer.message}
-        </p>
+        {weddingData.footer.message && (
+          <p className="font-sans text-xs sm:text-sm text-[#5C4D42] max-w-md mx-auto leading-relaxed">
+            {weddingData.footer.message}
+          </p>
+        )}
 
         {/* Couple Names & Hometowns */}
         <p className="font-serif text-lg sm:text-xl font-medium text-[#29452F] mt-4">

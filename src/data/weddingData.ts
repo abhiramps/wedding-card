@@ -64,10 +64,10 @@ export const weddingData: WeddingConfig = {
       {
         id: 'milestone-2',
         yearOrDate: 'Second Chapter',
-        title: 'Chaya Meets Filter Kaapi',
-        location: 'Moments of Togetherness',
+        title: 'When Two Paths Became One ❤️',
+        location: 'Where It All Began',
         description:
-          'Between the rhythmic pulse of Thrissur Pooram tales and the timeless grace of Madurai temple traditions, friendship deepened into enduring love.',
+          'Where two paths crossed at the office, destiny quietly began writing our love story—turning a simple acquaintance into a bond for forever.',
       },
       {
         id: 'milestone-3',
@@ -251,7 +251,7 @@ export const weddingData: WeddingConfig = {
 
   footer: {
     heading: 'With Love and Blessings',
-    message: 'Thank you for being a part of our special day.',
+    message: '',
     bilingualBlessing: {
       malayalam: 'സ്നേഹപൂർവ്വം ക്ഷണിക്കുന്നു',
       tamil: 'அன்புடன் அழைக்கிறோம்',

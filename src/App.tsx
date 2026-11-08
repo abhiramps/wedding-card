@@ -8,7 +8,7 @@ import { CulturalUnionSection } from './components/traditions/CulturalUnionSecti
 import { EventsSection } from './components/events/EventsSection';
 import { VenuesSection } from './components/venues/VenuesSection';
 import { GallerySection } from './components/gallery/GallerySection';
-import { RsvpSection } from './components/rsvp/RsvpSection';
+// import { RsvpSection } from './components/rsvp/RsvpSection';
 import { FooterSection } from './components/footer/FooterSection';
 
 export function App() {
@@ -55,8 +55,8 @@ export function App() {
           {/* 7. Wedding Photo Gallery */}
           <GallerySection />
 
-          {/* 8. RSVP Section */}
-          <RsvpSection />
+          {/* 8. RSVP Section (Disabled / Commented Out) */}
+          {/* <RsvpSection /> */}
         </main>
 
         {/* 9. Final Footer */}
