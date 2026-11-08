@@ -43,21 +43,21 @@ export const CountdownTimer: React.FC<CountdownTimerProps> = ({ targetDate }) =>
 
   return (
     <div
-      className="inline-flex items-center justify-center gap-2.5 sm:gap-4 px-5 py-2.5 rounded-full bg-[#FBF8F2]/85 backdrop-blur-xs border border-[#B38A45]/45 shadow-[0_6px_24px_rgba(48,37,30,0.06)]"
+      className="inline-flex items-center justify-center gap-2 sm:gap-4 px-4 sm:px-5 py-2 sm:py-2.5 rounded-full bg-[#FBF8F2]/90 backdrop-blur-xs border border-[#B38A45]/45 shadow-[0_6px_24px_rgba(48,37,30,0.06)]"
       aria-label="Countdown to Wedding Muhurtham"
     >
       {units.map((unit, index) => (
         <React.Fragment key={unit.label}>
-          <div className="flex flex-col items-center min-w-[42px] sm:min-w-[50px]">
-            <span className="font-serif text-xl sm:text-2xl font-semibold text-[#29452F] tabular-nums leading-none">
+          <div className="flex flex-col items-center min-w-[38px] sm:min-w-[50px]">
+            <span className="font-serif text-lg sm:text-2xl font-semibold text-[#29452F] tabular-nums leading-none">
               {String(unit.value).padStart(2, '0')}
             </span>
-            <span className="text-[9px] sm:text-[10px] font-sans uppercase tracking-[0.18em] text-[#5C4D42] mt-1">
+            <span className="text-[9px] sm:text-[10px] font-sans uppercase tracking-[0.16em] text-[#5C4D42] mt-1">
               {unit.label}
             </span>
           </div>
           {index < units.length - 1 && (
-            <span className="text-[#B38A45]/70 font-serif text-lg -mt-2 select-none">:</span>
+            <span className="text-[#B38A45]/70 font-serif text-base sm:text-lg -mt-2 select-none">:</span>
           )}
         </React.Fragment>
       ))}

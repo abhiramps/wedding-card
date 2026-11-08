@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { Calendar, ChevronDown } from 'lucide-react';
+import { Calendar, MapPin, ChevronDown } from 'lucide-react';
 import { weddingData } from '../../data/weddingData';
 import { CountdownTimer } from './CountdownTimer';
 import {
@@ -21,20 +21,20 @@ export const HeroSection: React.FC = () => {
   return (
     <section
       id="hero"
-      className="relative w-full overflow-hidden pt-10 sm:pt-14 flex flex-col items-center text-center"
+      className="relative w-full overflow-hidden pt-11 sm:pt-14 flex flex-col items-center text-center"
     >
-      {/* Top Hanging Floral Canopies (Left: White Jasmine & Foliage, Right: Pink & Jasmine Garlands) */}
-      <div className="absolute top-0 left-0 z-20 pointer-events-none">
+      {/* Top Hanging Floral Canopies — Scaled for Mobile so they frame without overlapping text */}
+      <div className="absolute top-0 -left-2 sm:left-0 z-20 pointer-events-none">
         <HangingJasmineGarland
           side="left"
-          className="w-28 sm:w-40 md:w-48 h-44 sm:h-64 md:h-72"
+          className="w-22 sm:w-38 md:w-46 h-36 sm:h-60 md:h-72"
         />
       </div>
-      <div className="absolute top-0 right-0 z-20 pointer-events-none">
+      <div className="absolute top-0 -right-2 sm:right-0 z-20 pointer-events-none">
         <HangingJasmineGarland
           side="right"
           withPinkBlossoms
-          className="w-28 sm:w-40 md:w-48 h-44 sm:h-64 md:h-72"
+          className="w-22 sm:w-38 md:w-46 h-36 sm:h-60 md:h-72"
         />
       </div>
 
@@ -43,63 +43,76 @@ export const HeroSection: React.FC = () => {
         initial={{ opacity: 0, y: 18 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
-        className="relative z-20 max-w-2xl mx-auto px-6 flex flex-col items-center"
+        className="relative z-20 max-w-2xl mx-auto px-5 sm:px-6 flex flex-col items-center"
       >
         {/* Auspicious Antique Gold Ganesha Emblem */}
-        <div className="mb-3 sm:mb-4">
-          <GaneshaEmblem className="w-13 h-15 sm:w-16 sm:h-18 mx-auto" />
+        <div className="mb-2.5 sm:mb-4">
+          <GaneshaEmblem className="w-12 h-14 sm:w-16 sm:h-18 mx-auto" />
         </div>
 
         {/* Invitation Header Labels */}
-        <p className="text-[11px] sm:text-xs font-serif italic text-[#5C4D42] tracking-wide mb-1">
+        <p className="text-xs sm:text-sm font-serif italic text-[#5C4D42] tracking-wide mb-1">
           {weddingData.hero.familiesLine}
         </p>
-        <p className="text-[10px] sm:text-xs font-sans uppercase tracking-[0.25em] text-[#30251E] font-normal mb-4 sm:mb-5">
+        <p className="text-[10px] sm:text-xs font-sans uppercase tracking-[0.2em] sm:tracking-[0.25em] text-[#30251E] font-normal mb-4 sm:mb-5">
           {weddingData.hero.invitedLine}
         </p>
 
-        {/* Couple Names in Large Elegant Forest Green Serif */}
-        <div className="space-y-1 sm:space-y-2 mb-4 sm:mb-5">
-          <h1 className="font-serif text-4xl sm:text-6xl md:text-7xl font-medium text-[#29452F] tracking-normal leading-[1.08]">
-            {weddingData.couple.groom.name}
-          </h1>
+        {/* Couple Names & Parentage in Elegant Forest Green Serif */}
+        <div className="space-y-1.5 sm:space-y-2 mb-4 sm:mb-5">
+          <div>
+            <h1 className="font-serif text-[34px] sm:text-6xl md:text-7xl font-medium text-[#29452F] tracking-normal leading-[1.1]">
+              {weddingData.couple.groom.name}
+            </h1>
+            <p className="font-serif italic text-[11px] sm:text-sm text-[#5C4D42] mt-1 max-w-xs sm:max-w-none mx-auto leading-snug">
+              ({weddingData.couple.groom.parents})
+            </p>
+          </div>
+
           <div className="py-0.5">
             <span className="font-serif italic text-2xl sm:text-3xl text-[#29452F]/90">
               &amp;
             </span>
           </div>
-          <h2 className="font-serif text-4xl sm:text-6xl md:text-7xl font-medium text-[#29452F] tracking-normal leading-[1.08]">
-            {weddingData.couple.bride.name}
-          </h2>
+
+          <div>
+            <h2 className="font-serif text-[34px] sm:text-6xl md:text-7xl font-medium text-[#29452F] tracking-normal leading-[1.1]">
+              {weddingData.couple.bride.name}
+            </h2>
+            <p className="font-serif italic text-[11px] sm:text-sm text-[#5C4D42] mt-1 max-w-xs sm:max-w-none mx-auto leading-snug">
+              ({weddingData.couple.bride.parents})
+            </p>
+          </div>
         </div>
 
         {/* Antique Gold Divider */}
-        <div className="my-2 sm:my-3">
-          <GoldDivider className="w-40 sm:w-48 h-5" />
+        <div className="my-1.5 sm:my-3">
+          <GoldDivider className="w-36 sm:w-48 h-5" />
         </div>
 
-        {/* Wedding Date & Location */}
-        <div className="mt-2 mb-5 space-y-1.5">
-          <div className="inline-flex items-center justify-center gap-2 text-xs sm:text-sm font-sans font-bold tracking-[0.2em] uppercase text-[#30251E]">
-            <Calendar className="w-4 h-4 text-[#B38A45]" />
+        {/* Wedding Date, Time & Venue Location */}
+        <div className="mt-2 mb-4 sm:mb-5 space-y-1.5">
+          <div className="inline-flex flex-wrap items-center justify-center gap-1.5 sm:gap-2 text-xs sm:text-sm font-sans font-bold tracking-[0.15em] sm:tracking-[0.2em] uppercase text-[#30251E]">
+            <Calendar className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#B38A45] shrink-0" />
             <span>{weddingData.hero.displayDate}</span>
           </div>
-          <p className="text-[11px] sm:text-xs font-sans uppercase tracking-[0.22em] text-[#30251E]/90 font-semibold">
-            {weddingData.hero.displayLocation}
-          </p>
+          <div className="flex items-center justify-center gap-1.5 text-[11px] sm:text-xs font-sans uppercase tracking-[0.16em] sm:tracking-[0.22em] text-[#29452F] font-bold">
+            <MapPin className="w-3.5 h-3.5 text-[#B38A45] shrink-0" />
+            <span>{weddingData.hero.displayLocation}</span>
+          </div>
         </div>
 
         {/* Subtle Luxury Countdown Timer */}
-        <div className="mb-2 sm:mb-4">
+        <div className="mb-3 sm:mb-4 w-full flex justify-center">
           <CountdownTimer targetDate={weddingData.hero.isoDate} />
         </div>
       </motion.div>
 
       {/* Kerala × Tamil Nadu Scenic Fusion Panorama */}
-      <div className="relative w-full -mt-6 sm:-mt-12 z-10">
+      <div className="relative w-full -mt-4 sm:-mt-12 z-10">
         {/* Top gradient blend so the panorama sky melts seamlessly into the #F8F2E8 paper background */}
         <div
-          className="absolute top-0 inset-x-0 h-24 sm:h-36 z-10 pointer-events-none"
+          className="absolute top-0 inset-x-0 h-16 sm:h-36 z-10 pointer-events-none"
           style={{
             background:
               'linear-gradient(to bottom, #F8F2E8 0%, rgba(248, 242, 232, 0.78) 45%, rgba(248, 242, 232, 0) 100%)',
@@ -110,7 +123,7 @@ export const HeroSection: React.FC = () => {
           initial={{ opacity: 0, scale: 1.02 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.1, ease: 'easeOut' }}
-          className="relative w-full aspect-[16/11] sm:aspect-[16/9] overflow-hidden"
+          className="relative w-full aspect-[4/3] sm:aspect-[16/9] overflow-hidden"
         >
           <img
             src={weddingData.hero.panoramaImage}
@@ -120,7 +133,7 @@ export const HeroSection: React.FC = () => {
         </motion.div>
 
         {/* Curved Golden Wave Transition & Scroll Indicator Button */}
-        <div className="relative -mt-12 sm:-mt-20 z-20">
+        <div className="relative -mt-10 sm:-mt-20 z-20">
           <CurvedGoldenWave className="w-full h-14 sm:h-24" />
 
           {/* Centered Scroll Indicator Button on the Golden Wave */}

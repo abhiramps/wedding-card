@@ -29,7 +29,7 @@ export const RsvpSection: React.FC = () => {
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (!prefersReducedMotion && selectedAttendance !== 'decline') {
       confetti({
-        particleCount: 55,
+        particleCount: 50,
         spread: 65,
         origin: { y: 0.75 },
         colors: ['#F8F2E8', '#B38A45', '#D4B475', '#FFFDF7'],
@@ -38,35 +38,35 @@ export const RsvpSection: React.FC = () => {
   };
 
   return (
-    <section id="rsvp" className="relative pt-8 sm:pt-12 pb-4 px-4 sm:px-8 max-w-4xl mx-auto">
+    <section id="rsvp" className="relative pt-6 sm:pt-12 pb-4 px-3.5 sm:px-8 max-w-4xl mx-auto">
       {/* Main Forest Green Invitation Card Container */}
       <motion.div
-        initial={{ opacity: 0, y: 24 }}
+        initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.2 }}
-        transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
+        viewport={{ once: true, amount: 0.15 }}
+        transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
         className="
-          relative w-full rounded-[36px] overflow-hidden
+          relative w-full rounded-[28px] sm:rounded-[36px] overflow-hidden
           border-2 border-[#B38A45]/75
-          shadow-[0_24px_60px_rgba(29,51,34,0.32)]
-          pt-14 sm:pt-18 pb-20 sm:pb-24 px-5 sm:px-12
+          shadow-[0_20px_50px_rgba(29,51,34,0.3)]
+          pt-12 sm:pt-18 pb-22 sm:pb-24 px-4 sm:px-12
         "
         style={{
           background:
             'radial-gradient(circle at 50% 38%, #34573B 0%, #29452F 55%, #1A2E1E 100%)',
         }}
       >
-        {/* Top Hanging White Jasmine Garlands & Tropical Leaves */}
-        <div className="absolute top-0 left-0 z-20 pointer-events-none">
-          <HangingJasmineGarland side="left" className="w-28 sm:w-36 h-44 sm:h-56" />
+        {/* Top Hanging White Jasmine Garlands — Scaled for Mobile */}
+        <div className="absolute top-0 -left-2 sm:left-0 z-20 pointer-events-none">
+          <HangingJasmineGarland side="left" className="w-20 sm:w-36 h-32 sm:h-56" />
         </div>
-        <div className="absolute top-0 right-0 z-20 pointer-events-none">
-          <HangingJasmineGarland side="right" className="w-28 sm:w-36 h-44 sm:h-56" />
+        <div className="absolute top-0 -right-2 sm:right-0 z-20 pointer-events-none">
+          <HangingJasmineGarland side="right" className="w-20 sm:w-36 h-32 sm:h-56" />
         </div>
 
         {/* Scalloped Cusped Antique Gold Inner Arch Border */}
         <div
-          className="absolute inset-x-4 sm:inset-x-8 top-6 bottom-10 pointer-events-none z-10"
+          className="absolute inset-x-2.5 sm:inset-x-8 top-4 sm:top-6 bottom-9 sm:bottom-10 pointer-events-none z-10"
           aria-hidden="true"
         >
           <svg
@@ -92,22 +92,22 @@ export const RsvpSection: React.FC = () => {
         </div>
 
         {/* Center RSVP Content Inside the Arch */}
-        <div className="relative z-20 max-w-md mx-auto text-center flex flex-col items-center pt-4 sm:pt-6">
-          <LotusMotif className="w-12 h-9 mb-2" color="#D4B475" />
+        <div className="relative z-20 max-w-md mx-auto text-center flex flex-col items-center pt-3 sm:pt-6 px-2 sm:px-0">
+          <LotusMotif className="w-10 h-7 sm:w-12 sm:h-9 mb-1.5" color="#D4B475" />
 
           <span className="font-serif text-2xl sm:text-3xl tracking-[0.14em] uppercase text-[#F8F2E8] font-medium">
             {weddingData.rsvpSection.label}
           </span>
 
-          <h2 className="font-serif text-xl sm:text-2xl text-[#F8F2E8]/95 mt-1 font-normal">
+          <h2 className="font-serif text-lg sm:text-2xl text-[#F8F2E8]/95 mt-1 font-normal px-2">
             {weddingData.rsvpSection.heading}
           </h2>
 
-          <div className="my-2.5">
-            <GoldDivider className="w-36 h-4" color="#D4B475" />
+          <div className="my-2">
+            <GoldDivider className="w-32 sm:w-36 h-4" color="#D4B475" />
           </div>
 
-          <p className="font-sans text-xs sm:text-sm text-[#F8F2E8]/80 mb-6">
+          <p className="font-sans text-xs sm:text-sm text-[#F8F2E8]/80 mb-5">
             {weddingData.rsvpSection.subtitle}
           </p>
 
@@ -118,12 +118,12 @@ export const RsvpSection: React.FC = () => {
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.95 }}
-                className="w-full p-6 sm:p-8 rounded-3xl bg-[#F8F2E8]/12 backdrop-blur-xs border border-[#B38A45]/60 text-center my-4"
+                className="w-full p-5 sm:p-8 rounded-3xl bg-[#F8F2E8]/12 backdrop-blur-xs border border-[#B38A45]/60 text-center my-3"
               >
-                <div className="w-12 h-12 rounded-full bg-[#F8F2E8] text-[#29452F] flex items-center justify-center mx-auto mb-3 shadow-md">
+                <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#F8F2E8] text-[#29452F] flex items-center justify-center mx-auto mb-3 shadow-md">
                   <Check className="w-6 h-6 stroke-[2.5]" />
                 </div>
-                <h3 className="font-serif text-2xl text-[#F8F2E8] font-semibold">
+                <h3 className="font-serif text-xl sm:text-2xl text-[#F8F2E8] font-semibold">
                   Thank You, {guestName}!
                 </h3>
                 <p className="font-sans text-xs sm:text-sm text-[#F8F2E8]/85 mt-2 leading-relaxed">
@@ -141,7 +141,7 @@ export const RsvpSection: React.FC = () => {
                 <button
                   type="button"
                   onClick={() => setIsSubmitted(false)}
-                  className="mt-5 text-xs font-sans uppercase tracking-[0.16em] text-[#D4B475] hover:text-[#F8F2E8] underline underline-offset-4 cursor-pointer"
+                  className="mt-4 text-xs font-sans uppercase tracking-[0.16em] text-[#D4B475] hover:text-[#F8F2E8] underline underline-offset-4 py-1 cursor-pointer"
                 >
                   Update Response
                 </button>
@@ -153,11 +153,11 @@ export const RsvpSection: React.FC = () => {
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 onSubmit={handleSubmit}
-                className="w-full space-y-4 text-left"
+                className="w-full space-y-3.5 sm:space-y-4 text-left"
               >
-                {/* Attendance Pill Selector (Matching sampleUI.png) */}
+                {/* Attendance Pill Selector */}
                 <div
-                  className="space-y-2.5 mb-5"
+                  className="space-y-2.5 mb-4"
                   role="radiogroup"
                   aria-label="Attendance confirmation"
                 >
@@ -171,11 +171,11 @@ export const RsvpSection: React.FC = () => {
                         aria-checked={isSelected}
                         onClick={() => setSelectedAttendance(opt.id)}
                         className={`
-                          w-full py-3 px-5 rounded-full font-sans text-xs sm:text-sm font-bold tracking-[0.06em]
-                          flex items-center justify-center gap-2 transition-all duration-300 cursor-pointer
+                          w-full py-3 px-4 rounded-full font-sans text-xs sm:text-sm font-bold tracking-[0.05em]
+                          flex items-center justify-center gap-1.5 sm:gap-2 transition-all duration-300 cursor-pointer
                           ${
                             isSelected
-                              ? 'bg-[#F8F2E8] text-[#29452F] border-2 border-[#F8F2E8] shadow-[0_6px_20px_rgba(0,0,0,0.22)] scale-[1.01]'
+                              ? 'bg-[#F8F2E8] text-[#29452F] border-2 border-[#F8F2E8] shadow-[0_6px_20px_rgba(0,0,0,0.22)]'
                               : 'bg-transparent text-[#F8F2E8]/90 border border-[#B38A45]/70 hover:border-[#D4B475] hover:bg-[#F8F2E8]/8'
                           }
                         `}
@@ -190,7 +190,7 @@ export const RsvpSection: React.FC = () => {
                   })}
                 </div>
 
-                {/* Guest Name & Number of Guests */}
+                {/* Guest Name & Number of Guests (text-base on mobile prevents iOS Safari auto-zoom) */}
                 <div className="grid grid-cols-1 sm:grid-cols-12 gap-3">
                   <div className="sm:col-span-7">
                     <label
@@ -206,7 +206,7 @@ export const RsvpSection: React.FC = () => {
                       placeholder="Enter your name"
                       value={guestName}
                       onChange={(e) => setGuestName(e.target.value)}
-                      className="w-full px-4 py-2.5 rounded-full bg-[#1B3020]/80 border border-[#B38A45]/60 text-[#F8F2E8] placeholder-[#F8F2E8]/40 text-xs sm:text-sm font-sans focus:outline-none focus:border-[#F8F2E8] transition-colors"
+                      className="w-full px-4 py-2.5 rounded-full bg-[#1B3020]/85 border border-[#B38A45]/60 text-[#F8F2E8] placeholder-[#F8F2E8]/40 text-base sm:text-sm font-sans focus:outline-none focus:border-[#F8F2E8] transition-colors"
                     />
                   </div>
 
@@ -222,7 +222,7 @@ export const RsvpSection: React.FC = () => {
                       value={guestCount}
                       onChange={(e) => setGuestCount(e.target.value)}
                       disabled={selectedAttendance === 'decline'}
-                      className="w-full px-4 py-2.5 rounded-full bg-[#1B3020]/80 border border-[#B38A45]/60 text-[#F8F2E8] text-xs sm:text-sm font-sans focus:outline-none focus:border-[#F8F2E8] disabled:opacity-40 transition-colors"
+                      className="w-full px-4 py-2.5 rounded-full bg-[#1B3020]/85 border border-[#B38A45]/60 text-[#F8F2E8] text-base sm:text-sm font-sans focus:outline-none focus:border-[#F8F2E8] disabled:opacity-40 transition-colors"
                     >
                       {weddingData.rsvpSection.guestCountOptions.map((countOpt) => (
                         <option
@@ -251,7 +251,7 @@ export const RsvpSection: React.FC = () => {
                     placeholder="Share a warm note or blessing..."
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
-                    className="w-full px-4 py-2.5 rounded-2xl bg-[#1B3020]/80 border border-[#B38A45]/60 text-[#F8F2E8] placeholder-[#F8F2E8]/40 text-xs sm:text-sm font-sans focus:outline-none focus:border-[#F8F2E8] transition-colors resize-none"
+                    className="w-full px-4 py-2.5 rounded-2xl bg-[#1B3020]/85 border border-[#B38A45]/60 text-[#F8F2E8] placeholder-[#F8F2E8]/40 text-base sm:text-sm font-sans focus:outline-none focus:border-[#F8F2E8] transition-colors resize-none"
                   />
                 </div>
 
@@ -260,7 +260,7 @@ export const RsvpSection: React.FC = () => {
                   <button
                     type="submit"
                     className="
-                      w-full sm:w-auto min-w-[220px] py-3 px-8 rounded-full
+                      w-full sm:w-auto min-w-[220px] py-3.5 sm:py-3 px-8 rounded-full
                       bg-gradient-to-r from-[#D4B475] via-[#B38A45] to-[#9A7332]
                       text-[#1D2D20] font-sans text-xs sm:text-sm font-bold uppercase tracking-[0.18em]
                       shadow-[0_8px_24px_rgba(0,0,0,0.28)]
@@ -280,22 +280,20 @@ export const RsvpSection: React.FC = () => {
           </AnimatePresence>
         </div>
 
-        {/* Bottom-Left Jasmine Cluster & Foliage + Bottom-Right Lit Brass Nilavilakku Lamp on Ledge */}
+        {/* Bottom Ledge */}
         <div
-          className="absolute bottom-0 inset-x-0 h-10 bg-gradient-to-t from-[#3B2A1E] via-[#59412E] to-[#7A5B40] border-t border-[#B38A45]/60 z-10 pointer-events-none"
+          className="absolute bottom-0 inset-x-0 h-9 sm:h-10 bg-gradient-to-t from-[#3B2A1E] via-[#59412E] to-[#7A5B40] border-t border-[#B38A45]/60 z-10 pointer-events-none"
           aria-hidden="true"
         />
 
-        {/* Bottom Left Fresh Jasmine Blossoms & Banana/Mango Leaves */}
+        {/* Bottom Left Fresh Jasmine Blossoms & Leaves — Scaled for Mobile */}
         <div
-          className="absolute bottom-2 left-2 sm:left-5 z-20 pointer-events-none select-none"
+          className="absolute bottom-1.5 left-1 sm:left-5 z-20 pointer-events-none select-none"
           aria-hidden="true"
         >
-          <svg viewBox="0 0 150 130" className="w-28 sm:w-36 h-24 sm:h-32">
-            {/* Green Tropical Leaves */}
+          <svg viewBox="0 0 150 130" className="w-20 sm:w-36 h-18 sm:h-32">
             <path d="M12 110C4 70 18 32 45 12C52 44 40 82 12 110Z" fill="#467042" />
             <path d="M22 112C38 78 68 54 102 48C84 78 56 102 22 112Z" fill="#588552" />
-            {/* Cluster of White Jasmine Flowers */}
             {[
               { x: 26, y: 92 },
               { x: 44, y: 88 },
@@ -316,12 +314,12 @@ export const RsvpSection: React.FC = () => {
           </svg>
         </div>
 
-        {/* Bottom Right Gleaming Brass Nilavilakku Oil Lamp */}
+        {/* Bottom Right Gleaming Brass Nilavilakku Oil Lamp — Scaled for Mobile */}
         <div
-          className="absolute bottom-2 right-1 sm:right-5 z-20 pointer-events-none select-none"
+          className="absolute bottom-1.5 right-0.5 sm:right-5 z-20 pointer-events-none select-none"
           aria-hidden="true"
         >
-          <BrassNilavilakku className="w-20 sm:w-28 h-36 sm:h-48 drop-shadow-[0_10px_20px_rgba(0,0,0,0.5)]" />
+          <BrassNilavilakku className="w-15 sm:w-28 h-28 sm:h-48 drop-shadow-[0_10px_20px_rgba(0,0,0,0.5)]" />
         </div>
       </motion.div>
     </section>

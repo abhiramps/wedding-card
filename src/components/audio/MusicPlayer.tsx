@@ -51,13 +51,16 @@ export const MusicPlayer: React.FC<MusicPlayerProps> = ({ autoPlayTrigger }) => 
   };
 
   return (
-    <div className="fixed bottom-5 right-5 z-40">
+    <div
+      className="fixed right-4 sm:right-5 z-40"
+      style={{ bottom: 'max(1rem, env(safe-area-inset-bottom))' }}
+    >
       <audio ref={audioRef} src={weddingData.audio.src} loop preload="none" />
 
       <button
         type="button"
         onClick={toggleAudio}
-        className="group relative flex items-center justify-center w-11 h-11 rounded-full bg-[#F8F2E8]/95 backdrop-blur-md border border-[#B38A45]/70 text-[#29452F] shadow-[0_6px_20px_rgba(48,37,30,0.16)] transition-all duration-300 hover:scale-105 hover:border-[#B38A45] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#B38A45]"
+        className="group relative flex items-center justify-center w-11 h-11 rounded-full bg-[#F8F2E8]/95 backdrop-blur-md border border-[#B38A45]/75 text-[#29452F] shadow-[0_6px_20px_rgba(48,37,30,0.2)] transition-all duration-300 hover:scale-105 active:scale-95 hover:border-[#B38A45] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#B38A45] cursor-pointer"
         title={isPlaying ? 'Mute wedding music' : 'Play wedding music'}
         aria-label={isPlaying ? 'Mute wedding music' : 'Play wedding music'}
       >

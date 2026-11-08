@@ -30,9 +30,9 @@ export function App() {
 
       {/* Handcrafted Vertical Wedding Invitation Card Container (No Navbar) */}
       <div className="relative z-10 max-w-4xl mx-auto min-h-screen bg-[#F8F2E8] paper-texture shadow-[0_0_80px_rgba(48,37,30,0.15)] sm:my-6 sm:rounded-[32px] sm:border sm:border-[#B38A45]/45 overflow-hidden">
-        {/* Delicate Inner Gold Card Frame Line (Desktop/Tablet) */}
+        {/* Delicate Inner Gold Card Frame Line (Both Mobile & Desktop) */}
         <div
-          className="hidden sm:block absolute inset-2.5 rounded-[24px] border border-[#B38A45]/25 pointer-events-none z-30"
+          className="absolute inset-1.5 sm:inset-2.5 rounded-xl sm:rounded-[24px] border border-[#B38A45]/25 pointer-events-none z-30"
           aria-hidden="true"
         />
 
